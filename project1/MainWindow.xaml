@@ -5,11 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:project1"
         mc:Ignorable="d"
-        Title="20/20/20" Height="400" Width="800" Background="DarkCyan" Icon="/sight-899059.png">
+        Title="20/20/20" Height="300" Width="500" Background="DarkCyan" Icon="/sight-899059.png">
  
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="auto"/>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="auto"/>
             <ColumnDefinition Width="auto"/>
@@ -19,15 +20,24 @@
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="20"/>
+            <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="20"/>
         </Grid.RowDefinitions>
 
-        <Button x:Name="startButton" Grid.Column="2" Grid.Row="2" Content="Start" HorizontalAlignment="Center" Height="78" VerticalAlignment="Center" Width="155" Click="startButton_Click"  Background="#FF3F980F" FontSize="30" FontFamily="Arial"/>
-        <Button x:Name="stopButton" Grid.Column="4" Grid.Row="2" Content="Stop" HorizontalAlignment="Center" Height="78" VerticalAlignment="Center" Width="155" Click="stopButton_Click" Background="#FF944646" FontSize="30" FontFamily="Arial"/>
-        <Label x:Name="timeLabel" Content="0" Grid.Row="3" Grid.Column="3" FontSize="30"/>
+        <Button x:Name="startButton" Grid.Column="3" Grid.Row="3" Content="Start" HorizontalAlignment="Center" Height="78" VerticalAlignment="Center" Width="155" Click="startButton_Click"  Background="#FF3F980F" FontSize="30" FontFamily="Arial"/>
+        <Button x:Name="stopButton" Grid.Column="5" Grid.Row="3" Content="Stop" HorizontalAlignment="Center" Height="78" VerticalAlignment="Center" Width="155" Click="stopButton_Click" Background="#FF944646" FontSize="30" FontFamily="Arial"/>
+        <Label x:Name="timeLabel" Content="0" Grid.Row="4" Grid.Column="4" FontSize="30" HorizontalAlignment="Center"/>
+        <Button x:Name="resetButton" Grid.Column="4" Grid.Row="6" Content="Reset" HorizontalAlignment="Center" Height="30" VerticalAlignment="Center" Width="60" Click="resetButton_Click" Background="AntiqueWhite" FontSize="15" FontFamily="Arial"/>
+        <Button x:Name="settingsButton" Grid.Column="4" Grid.Row="5" Width="70" Height="50" Click="settingsButton_Click" Background="Transparent" BorderBrush="Transparent">
+            <ContentControl>
+                <Image Source="/settings.png"></Image>
+            </ContentControl>
+        </Button>
     </Grid>
 </Window>

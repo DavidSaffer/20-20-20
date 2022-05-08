@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:project1"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
-        Title="Time is up" Height="150" Width="400" Background="DarkCyan" Icon="/sight-899059.png">
+        Title="Time is up" Height="800" Width="1600" Background="DarkCyan" Icon="/sight-899059.png">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="20"/>

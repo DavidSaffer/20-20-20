@@ -13,19 +13,25 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Threading;
+using System.Diagnostics;
 
 namespace project1
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
+    /// Ideas
+    /// Add setting for timer to count up, or down 
     public partial class MainWindow : Window
     {
         private int time = 0;
         private DispatcherTimer timer;
+        private int timerLength;
+        private int waitLength;
         public MainWindow()
         {
             InitializeComponent();
+            Properties.Settings.Default.Reload();
             timer = new DispatcherTimer();
             timer.Interval = TimeSpan.FromSeconds(1);
             timer.Tick += timerTick;
@@ -33,17 +39,20 @@ namespace project1
 
         private void timerTick(object sender, EventArgs e)
         {
+            timerLength = Properties.Settings.Default.timerLength;
+            waitLength = Properties.Settings.Default.waitLength;
+
             time++;
             if (time < 0)
             {
-                timeLabel.Content = "waiting to restart: " + (time * -1).ToString();
+                timeLabel.Content = "waiting to restart: " + TimeSpan.FromSeconds(time * -1).ToString(@"mm\:ss");
             }
             else
             {
                 timeLabel.Content = TimeSpan.FromSeconds(time).ToString(@"mm\:ss");
             }
 
-            if (time >= 60*20)
+            if (time >= 60* timerLength)
             {
                 this.timeIsUp();
             }
@@ -58,13 +67,29 @@ namespace project1
             timer.Stop();
         }
 
+        private void resetButton_Click(object sender, RoutedEventArgs e)
+        {
+            timer.Stop();
+            time = 0;
+            timeLabel.Content = TimeSpan.FromSeconds(time).ToString(@"mm\:ss");
+        }
+
+        private void settingsButton_Click(object sender, RoutedEventArgs e)
+        {
+            settingsWindow windowForSettings = new settingsWindow();
+            windowForSettings.Topmost = true;
+            windowForSettings.Show();
+        }
+
         private void timeIsUp()
         {
             System.Media.SystemSounds.Exclamation.Play();
             Window1 notificationWindow = new Window1();
+            notificationWindow.Topmost = true;
             notificationWindow.Show();
-            time = -60;
+            time = -60 * waitLength;
         }
+
         
     }
 }
