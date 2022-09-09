@@ -22,6 +22,8 @@ namespace project1
         public Window1()
         {
             InitializeComponent();
+            int time = Properties.Settings.Default.timerLength;
+            message.Content = time.ToString() + " Minutes has passed";
         }
     }
 }

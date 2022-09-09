@@ -25,7 +25,7 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="20"/>
         </Grid.RowDefinitions>
-        <Label Content="20 Minutes has passed" Grid.Row="2" Grid.Column="2" FontSize="30"/>
+        <Label x:Name="message" Content="20 Minutes has passed" Grid.Row="2" Grid.Column="2" FontSize="30"/>
         <Label Content="Go look out a window" Grid.Row="3" Grid.Column="2" FontSize="20" HorizontalAlignment="Center"/>
 
     </Grid>

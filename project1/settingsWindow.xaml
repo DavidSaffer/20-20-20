@@ -10,34 +10,40 @@
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="auto"/>
             <ColumnDefinition Width="auto"/>
             <ColumnDefinition Width="auto"/>
             <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="20"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="20"/>
+            <RowDefinition Height="*"/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
             <RowDefinition Height="20"/>
         </Grid.RowDefinitions>
-        <Label Content="Settings" Grid.Row="1" Grid.Column="2" FontSize="30" HorizontalAlignment="Center"/>
+        <Label Content="Settings" Grid.Row="3" Grid.Column="3" FontSize="30" HorizontalAlignment="Center"/>
         
-        <Label Content="Timer Length" Grid.Row="3" Grid.Column="1" FontSize="30" HorizontalAlignment="Center"/>
-        <Slider x:Name="timeSlider" Grid.Column="1" Grid.Row="4" Width="120" TickFrequency="1" IsSnapToTickEnabled="True" Maximum="60" ValueChanged="updateTime"/>
-        <TextBox x:Name="currentTime" Background="DarkCyan" BorderThickness="0" Text="{Binding ElementName=timeSlider, Path=Value, UpdateSourceTrigger=PropertyChanged}" Grid.Row="5" Grid.Column="1" FontSize="30" HorizontalAlignment="Center"/>
+        <Label Content="Timer Length" Grid.Row="4" Grid.Column="2" FontSize="30" HorizontalAlignment="Center"/>
+        <Slider x:Name="timeSlider" Grid.Column="2" Grid.Row="5" Width="120" TickFrequency="1" IsSnapToTickEnabled="True" Maximum="60" ValueChanged="updateTime"/>
+        <TextBox x:Name="currentTime" Background="DarkCyan" BorderThickness="0" Text="{Binding ElementName=timeSlider, Path=Value, UpdateSourceTrigger=PropertyChanged}" Grid.Row="6" Grid.Column="2" FontSize="30" HorizontalAlignment="Center"/>
 
-        <Label Content="Wait Length" Grid.Row="3" Grid.Column="3" FontSize="30" HorizontalAlignment="Center"/>
-        <Slider x:Name="waitSlider" Grid.Column="3" Grid.Row="4" Width="120" TickFrequency="1" IsSnapToTickEnabled="True" Maximum="10" ValueChanged="updateWaitTime"/>
-        <TextBox x:Name="currentWaitTime" Background="DarkCyan" BorderThickness="0" Text="{Binding ElementName=waitSlider, Path=Value, UpdateSourceTrigger=PropertyChanged}" Grid.Row="5" Grid.Column="3" FontSize="30" HorizontalAlignment="Center"/>
+        <Label Content="Wait Length" Grid.Row="4" Grid.Column="4" FontSize="30" HorizontalAlignment="Center"/>
+        <Slider x:Name="waitSlider" Grid.Column="4" Grid.Row="5" Width="120" TickFrequency="1" IsSnapToTickEnabled="True" Maximum="10" ValueChanged="updateWaitTime"/>
+        <TextBox x:Name="currentWaitTime" Background="DarkCyan" BorderThickness="0" Text="{Binding ElementName=waitSlider, Path=Value, UpdateSourceTrigger=PropertyChanged}" Grid.Row="6" Grid.Column="4" FontSize="30" HorizontalAlignment="Center"/>
 
 
-        <Button x:Name="saveButton" Grid.Row="6" Grid.Column="2" Content="Save" HorizontalAlignment="Center" Click="settingsClicked" Background="Gray" FontSize="20" FontFamily="Arial" Height="50" Width="80"/>
+        <Button x:Name="saveButton" Grid.Row="7" Grid.Column="3" Content="Save" HorizontalAlignment="Center" Click="settingsClicked" Background="Gray" FontSize="20" FontFamily="Arial" Height="50" Width="80"/>
     </Grid>
     
 </Window>
