@@ -11,14 +11,13 @@ Use the stop button to stop the timer <br>
 Use the Gear button to change settings <br>
 Use the reset button to restart the timer <br>
 
-![main](main.PNG?raw=true "Title")
+![main](main.PNG?raw=true "main")
 
 ## Settings
-![main](settings.PNG?raw=true "Title")
+![settings](settings.PNG?raw=true "settings")<br>
 Use either the slider or text field to adjust the timer length <br>
 Wait length will change how long the timer waits before starting again
 
 ## Notification
-This is the screen that will notify you when the timer is up
-<br>
-![main](notification.PNG?raw=true "Title")
+This is the screen that will notify you when the timer is up<br>
+![notification](notification.PNG?raw=true "notification")
